@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="auth_til">
+        <item name="boxStrokeColor">@android:color/transparent</item>
+        <item name="hintTextColor">@android:color/black</item>
+    </style>
+</resources>
