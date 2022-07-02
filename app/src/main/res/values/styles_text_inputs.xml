@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="auth_til">
+    <style name="auth_til" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="boxStrokeColor">@android:color/transparent</item>
         <item name="hintTextColor">@android:color/black</item>
     </style>

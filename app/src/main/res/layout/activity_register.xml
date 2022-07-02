@@ -19,25 +19,24 @@
             style="@style/txt_instagram_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/tilLoginEmail"
+            app:layout_constraintBottom_toTopOf="@id/tilRegEmail"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilLoginEmail"
+            android:id="@+id/tilRegEmail"
             style="@style/auth_til"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/tilLoginPasswd"
+            app:layout_constraintBottom_toTopOf="@id/tilRegPasswd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txtLoginAppLogo"
             tools:layout_editor_absoluteX="20dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtTxtLoginEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:foreground="@color/gray_with_opacity"
@@ -46,21 +45,40 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilLoginPasswd"
+            android:id="@+id/tilRegPasswd"
             style="@style/auth_til"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/btnLogin"
-            app:layout_constraintEnd_toEndOf="@id/tilLoginEmail"
-            app:layout_constraintStart_toStartOf="@id/tilLoginEmail"
-            app:layout_constraintTop_toBottomOf="@id/tilLoginEmail">
+            app:layout_constraintBottom_toTopOf="@id/tilConfirmPsswd"
+            app:layout_constraintEnd_toEndOf="@id/tilRegEmail"
+            app:layout_constraintStart_toStartOf="@id/tilRegEmail"
+            app:layout_constraintTop_toBottomOf="@id/tilRegEmail">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtTxtLoginPsswd"
+                android:id="@+id/edtTxtRegPsswd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:foreground="@color/gray_with_opacity"
                 android:hint="@string/password"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilConfirmPsswd"
+            style="@style/auth_til"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/btnLogin"
+            app:layout_constraintEnd_toEndOf="@id/tilRegEmail"
+            app:layout_constraintStart_toStartOf="@id/tilRegEmail"
+            app:layout_constraintTop_toBottomOf="@id/tilRegPasswd">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtTxtConfirmPsswd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="@color/gray_with_opacity"
+                android:hint="@string/password_confirmation"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,22 +88,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/login"
-            app:layout_constraintBottom_toTopOf="@id/btnRegister"
-            app:layout_constraintEnd_toEndOf="@id/tilLoginEmail"
-            app:layout_constraintStart_toStartOf="@id/tilLoginEmail"
-            app:layout_constraintTop_toBottomOf="@id/tilLoginPasswd" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnRegister"
-            style="@style/button_transparent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/register"
+            android:text="@string/confirm"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/tilLoginEmail"
-            app:layout_constraintStart_toStartOf="@id/tilLoginEmail"
-            app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+            app:layout_constraintEnd_toEndOf="@id/tilRegEmail"
+            app:layout_constraintStart_toStartOf="@id/tilRegEmail"
+            app:layout_constraintTop_toBottomOf="@id/tilConfirmPsswd" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
