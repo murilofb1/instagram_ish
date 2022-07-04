@@ -68,7 +68,7 @@
             style="@style/auth_til"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/btnLogin"
+            app:layout_constraintBottom_toTopOf="@id/btnConfirm"
             app:layout_constraintEnd_toEndOf="@id/tilRegEmail"
             app:layout_constraintStart_toStartOf="@id/tilRegEmail"
             app:layout_constraintTop_toBottomOf="@id/tilRegPasswd">
@@ -83,10 +83,8 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLogin"
-            style="@style/button_filled"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/btnConfirm"
+            style="@style/ButtonThemes.Default"
             android:layout_marginTop="16dp"
             android:text="@string/confirm"
             app:layout_constraintBottom_toBottomOf="parent"

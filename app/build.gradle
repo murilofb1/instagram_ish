@@ -9,14 +9,16 @@ android {
 
     defaultConfig {
         applicationId "com.example.instagramish"
-        minSdk 21
+        minSdk 23
         targetSdk 32
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    buildFeatures {
+        viewBinding = true
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -47,6 +49,13 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation "androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //Paris for changing styles programmatically
+    implementation 'com.airbnb.android:paris:2.0.0'
+    // Apply the Paris processor if you're using Paris annotations for code gen.
+    //kapt 'com.airbnb.android:paris-processor:2.0.0'
+    // or if you are using Kotlin Symbol Processing
+//    ksp 'com.airbnb.android:paris-processor:2.0.0'
 }
 repositories {
     mavenCentral()
