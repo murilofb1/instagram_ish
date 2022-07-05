@@ -37,6 +37,7 @@
             tools:layout_editor_absoluteX="20dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtTxtRegEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:foreground="@color/gray_with_opacity"

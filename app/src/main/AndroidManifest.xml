@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InstagramIsh.NoActionBar">
         <activity
-            android:name=".RegisterActivity"
+            android:name=".authentication.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".authentication.LoginActivity"
             android:exported="true"
             >
             <intent-filter>

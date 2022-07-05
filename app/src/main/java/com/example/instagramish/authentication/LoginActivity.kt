@@ -1,10 +1,10 @@
-package com.example.instagramish
+package com.example.instagramish.authentication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import androidx.core.content.ContextCompat
 import com.airbnb.paris.extensions.style
+import com.example.instagramish.helpers.NavHelper
+import com.example.instagramish.R
 import com.example.instagramish.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
