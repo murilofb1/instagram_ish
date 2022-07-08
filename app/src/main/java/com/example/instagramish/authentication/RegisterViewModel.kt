@@ -10,8 +10,8 @@ import com.example.instagramish.helpers.ToastH
 class RegisterViewModel(application: Application) : AndroidViewModel(application) {
     private val appContext = application.applicationContext
     private val toastH = ToastH(appContext)
-    val registerStatus = MutableLiveData(false)
-
+    val registerButtonStatus = MutableLiveData(false)
+    val registerSuccessful = MutableLiveData(false)
 
     fun validateFields(email: String, psswd: String, psswdConfirm: String): Boolean {
         if (email.isEmpty() && psswd.isEmpty() && psswdConfirm.isEmpty())
@@ -26,10 +26,11 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
         return false
     }
 
-    fun registerUser(email: String, psswd: String) {
-        registerStatus.value = true
+    private fun registerUser(email: String, psswd: String) {
+        registerButtonStatus.value = true
         FirebaseAuthentication.registerUser(email, psswd).addOnCompleteListener { result ->
-            registerStatus.value = false
+            if (result.isSuccessful) registerSuccessful.value = true
+            registerButtonStatus.value = false
         }
     }
 }

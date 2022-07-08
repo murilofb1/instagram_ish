@@ -18,10 +18,14 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this).get(RegisterViewModel::class.java)
         navHelper = NavHelper(this).RegisterHelper()
-        viewModel.registerStatus.observe(this) {
-            if (it) binding.btnConfirm.style(R.style.ButtonThemes_Disabled)
-            else binding.btnConfirm.style(R.style.ButtonThemes_Default)
+        viewModel.registerButtonStatus.observe(this) {
+            toggleConfirmButton(it)
         }
+
+        viewModel.registerSuccessful.observe(this) {
+            if (it) navHelper.goToHome()
+        }
+
         binding.btnConfirm.setOnClickListener {
             viewModel.validateFields(getEmailStr(), getPsswdStr(), getPsswdConfirmStr())
         }
@@ -31,4 +35,10 @@ class RegisterActivity : AppCompatActivity() {
     private fun getEmailStr(): String = binding.edtTxtRegEmail.text.toString()
     private fun getPsswdStr(): String = binding.edtTxtRegPsswd.text.toString()
     private fun getPsswdConfirmStr(): String = binding.edtTxtConfirmPsswd.text.toString()
+
+    private fun toggleConfirmButton(value: Boolean) {
+        if (value) binding.btnConfirm.style(R.style.ButtonThemes_Disabled)
+        else binding.btnConfirm.style(R.style.ButtonThemes_Default)
+    }
+
 }

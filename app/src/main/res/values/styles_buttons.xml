@@ -19,10 +19,11 @@
         <item name="android:background">@android:color/transparent</item>
         <item name="android:textColor">@color/color_primary</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:clickable">true</item>
     </style>
 
     <style name="ButtonThemes.Disabled" parent="ButtonThemes">
-        <item name="android:text">""</item>
+        <item name="android:textColor">@android:color/transparent</item>
         <item name="android:backgroundTint">@color/disabled_color</item>
         <item name="android:clickable">false</item>
     </style>

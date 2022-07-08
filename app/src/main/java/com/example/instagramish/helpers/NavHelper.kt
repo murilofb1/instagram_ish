@@ -3,6 +3,7 @@ package com.example.instagramish.helpers
 import android.app.Activity
 import android.content.Intent
 import com.example.instagramish.authentication.RegisterActivity
+import com.example.instagramish.main.HomeActivity
 
 class NavHelper(val activity: Activity) {
     //LOGIN NAVIGATION
@@ -12,11 +13,24 @@ class NavHelper(val activity: Activity) {
             activity.startActivity(i)
         }
 
-        fun goToMain() {}
+        fun goToHome() {
+            val i = Intent(activity, HomeActivity::class.java)
+            activity.startActivity(i)
+            activity.finishAffinity()
+        }
     }
 
     //REGISTER NAVIGATION
     inner class RegisterHelper {
-        fun goToLogin() { activity.finish() }
+        fun goToLogin() {
+            activity.finish()
+        }
+
+        fun goToHome() {
+            val i = Intent(activity, HomeActivity::class.java)
+            activity.startActivity(i)
+            activity.finishAffinity()
+        }
     }
+
 }

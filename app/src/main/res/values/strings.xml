@@ -1,4 +1,7 @@
 <resources>
+
+    <string name="my_email">murilo.kta.leo@gmail.com</string>
+    <string name="my_password">123456</string>
     <string name="app_name">InstagramIsh</string>
     <string name="password">Password</string>
     <string name="app_typography">Instagram(Ish)</string>
